@@ -56,12 +56,14 @@ nav {
 
 main {
     display: grid;
-    padding: 15px;
+    padding: 20px;
 
     figure {
         margin: 0;
+        margin: auto;
 
         img {
+            margin: auto;
             width: 100%;
         }
 
@@ -70,5 +72,17 @@ main {
     p {
         font-size: 20px;
         text-align: center;
+    }
+}
+
+footer {
+    height: 60px;
+    background-color: $headerColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 20px;
     }
 }
