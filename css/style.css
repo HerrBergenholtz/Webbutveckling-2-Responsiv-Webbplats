@@ -1,6 +1,13 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   line-height: 150%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
@@ -69,6 +76,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: auto;
 }
 footer p {
   font-size: 20px;
@@ -81,5 +89,17 @@ footer p {
   nav ul {
     grid-template-columns: repeat(3, auto);
     grid-template-rows: auto;
+  }
+  nav ul li {
+    border-width: 1px;
+    border-color: #000;
+    border-style: solid;
+  }
+  main {
+    grid-template-columns: 1fr 2fr;
+    gap: 70px;
+  }
+  main p {
+    text-align: left;
   }
 }/*# sourceMappingURL=style.css.map */
