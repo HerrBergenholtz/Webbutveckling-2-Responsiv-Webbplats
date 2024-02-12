@@ -1,13 +1,6 @@
-html {
-  height: 100%;
-}
-
 body {
   margin: 0;
   line-height: 150%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .wrapper {
@@ -82,9 +75,43 @@ footer p {
   font-size: 20px;
 }
 
+#sida2 main {
+  padding: 0;
+}
+#sida2 main article {
+  padding: 10px;
+  border-style: solid;
+  border-color: #000;
+  border-width: 1px;
+}
+#sida2 main article figure {
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+#sida2 main article figure img {
+  width: 50vw;
+}
+#sida2 main article figure figcaption {
+  margin: auto;
+}
+#sida2 main article p {
+  text-align: left;
+  width: 90%;
+}
+
 @media screen and (min-width: 800px) {
+  body {
+    margin: auto;
+    width: 80vw;
+    border-color: #000;
+    border-style: solid;
+    border-width: 1px;
+  }
+  header {
+    width: 100%;
+  }
   nav {
-    width: 100vw;
+    width: 100%;
   }
   nav ul {
     grid-template-columns: repeat(3, auto);

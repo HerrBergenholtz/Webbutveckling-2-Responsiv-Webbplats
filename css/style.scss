@@ -1,16 +1,9 @@
 $headerColor: #cecece;
 $navColor: #ecf1f5;
 
-html {
-    height: 100%;
-}
-
 body {
     margin: 0;
     line-height: 150%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 .wrapper {
@@ -94,9 +87,52 @@ footer {
     }
 }
 
+#sida2 {
+    main {
+        padding: 0;
+
+        article {
+            padding: 10px;
+            border-style: solid;
+            border-color: #000;
+            border-width: 1px;
+
+            figure {
+                display: grid;
+                grid-template-columns: min-content auto;
+
+                img {
+                    width: 50vw;
+                }
+
+                figcaption {
+                    margin: auto;
+                }
+            }
+
+            p {
+                text-align: left;
+                width: 90%;
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 800px) {
+    body {
+        margin: auto;
+        width: 80vw;
+        border-color: #000;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    header {
+        width: 100%;
+    }
+
     nav {
-        width: 100vw;
+        width: 100%;
 
         ul {
             grid-template-columns: repeat(3, auto);
