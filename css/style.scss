@@ -92,7 +92,7 @@ footer {
         padding: 0;
 
         article {
-            padding: 10px;
+            padding: 20px;
             border-style: solid;
             border-color: #000;
             border-width: 1px;
@@ -112,7 +112,6 @@ footer {
 
             p {
                 text-align: left;
-                width: 90%;
             }
         }
     }
@@ -152,6 +151,56 @@ footer {
 
         p {
             text-align: left;
+        }
+    }
+
+    #sida2 {
+        height: 75vh;
+
+        .wrapper {
+            grid-template-columns: 1fr 6fr;
+            grid-template-areas: 
+                "header header"
+                "nav main"
+                "footer footer";
+            
+            header {
+                grid-area: header;
+            }
+
+            nav {
+                grid-area: nav;
+            }
+
+            main {
+                grid-area: main;
+                height: 60vh;
+                overflow: auto;
+
+                section {
+                    width: 60vw;
+
+                    article {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        height: 30vh;
+                        width: 100%;
+
+                        figure {
+                            height: 20vh;
+                            grid-template-columns: 1fr;
+
+                            img {
+                                width: 20vw;
+                            }
+                        }
+                    }
+                }
+            }
+
+            footer {
+                grid-area: footer;
+            }
         }
     }
 }

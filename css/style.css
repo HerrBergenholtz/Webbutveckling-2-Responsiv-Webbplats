@@ -79,7 +79,7 @@ footer p {
   padding: 0;
 }
 #sida2 main article {
-  padding: 10px;
+  padding: 20px;
   border-style: solid;
   border-color: #000;
   border-width: 1px;
@@ -96,7 +96,6 @@ footer p {
 }
 #sida2 main article p {
   text-align: left;
-  width: 90%;
 }
 
 @media screen and (min-width: 800px) {
@@ -128,5 +127,42 @@ footer p {
   }
   main p {
     text-align: left;
+  }
+  #sida2 {
+    height: 75vh;
+  }
+  #sida2 .wrapper {
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas: "header header" "nav main" "footer footer";
+  }
+  #sida2 .wrapper header {
+    grid-area: header;
+  }
+  #sida2 .wrapper nav {
+    grid-area: nav;
+  }
+  #sida2 .wrapper main {
+    grid-area: main;
+    height: 60vh;
+    overflow: auto;
+  }
+  #sida2 .wrapper main section {
+    width: 60vw;
+  }
+  #sida2 .wrapper main section article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 30vh;
+    width: 100%;
+  }
+  #sida2 .wrapper main section article figure {
+    height: 20vh;
+    grid-template-columns: 1fr;
+  }
+  #sida2 .wrapper main section article figure img {
+    width: 20vw;
+  }
+  #sida2 .wrapper footer {
+    grid-area: footer;
   }
 }/*# sourceMappingURL=style.css.map */
