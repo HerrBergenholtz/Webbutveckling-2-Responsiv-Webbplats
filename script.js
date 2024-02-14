@@ -2,24 +2,28 @@ let section;
 let jsonArr = [
     article1 = {
         img: "../src/våt uggl.jpg",
-        caption: "bildtsdasdsad ext",
+        alt: "uggla",
+        caption: "bild tsda sdsad ext",
         txt: "dfjkasdfk jadskjfasdkl fsndajaksvdhix czjnkasjdfn"
     },
 
     article1 = {
         img: "../src/uggl.PNG",
+        alt: "uggla2",
         caption: "bildtext",
         txt: "dfjkas dfkjads kjfasdklfs dajaksvdh ixczjnk asjdfn"
     },
 
     article1 = {
         img: "../src/våt uggl.jpg",
+        alt: "uggla3",
         caption: "bildtext",
         txt: "dfjk asdfkjadskjfasdk lfsndajak svdh ixczjn kasj dfn"
     },
 
     article1 = {
         img: "../src/våt uggl.jpg",
+        alt: "uggla4",
         caption: "bildtext",
         txt: "dfjk asdfkjadsk jfasdklfs ndajaksvdhi xczj nkasjdfn"
     }
@@ -41,7 +45,7 @@ function addArticles() {
         text.innerText = jsonArr[i].txt;
         caption.innerText = jsonArr[i].caption;
         img.src = jsonArr[i].img;
-        img.alt = "uggla";
+        img.alt = jsonArr[i].alt;
         fig.appendChild(img);
         fig.appendChild(caption);
         article.appendChild(fig)

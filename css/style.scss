@@ -66,6 +66,9 @@ main {
             width: 100%;
         }
 
+        caption {
+            font-size: 0.8em;
+        }
     }
 
     p {
@@ -155,52 +158,78 @@ footer {
     }
 
     #sida2 {
-        height: 75vh;
-
         .wrapper {
-            grid-template-columns: 1fr 6fr;
+            grid-template-columns: 1fr 5fr;
             grid-template-areas: 
                 "header header"
                 "nav main"
                 "footer footer";
+            height: 70vh;
+        }
+
+        header {
+            grid-area: header;
+        }
+    }
+
+    #sida2 nav, #sida3 nav {
+        grid-area: nav;
+
+        ul {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            height: 100%;
+
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: auto;
             
-            header {
-                grid-area: header;
+                a {
+                    padding: 50px;
+                }
             }
+        }
+    }
 
-            nav {
-                grid-area: nav;
-            }
+    #sida2 main {
+        grid-area: main;
+        display: block;
+        height: 100%;
+        overflow: auto;
+        padding: 10px;
 
-            main {
-                grid-area: main;
-                height: 60vh;
-                overflow: auto;
+        section {
+            display: grid;
+            gap: 10px;
+            width: 98%;
+            margin: auto;
 
-                section {
-                    width: 60vw;
+            article {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: 30vh;
+                width: 100%;
+                padding: 0;
 
-                    article {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        height: 30vh;
-                        width: 100%;
+                figure {
+                    grid-template-columns: 1fr;
+                    gap: 10px;
 
-                        figure {
-                            height: 20vh;
-                            grid-template-columns: 1fr;
+                    img {
+                        width: 60%;
+                    }
 
-                            img {
-                                width: 20vw;
-                            }
-                        }
+                    figcaption {
+                        font-size: 1.2em;
                     }
                 }
             }
-
-            footer {
-                grid-area: footer;
-            }
         }
+    }
+
+    #sida2 footer {
+        grid-area: footer;
     }
 }

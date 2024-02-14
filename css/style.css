@@ -58,6 +58,9 @@ main figure img {
   margin: auto;
   width: 100%;
 }
+main figure caption {
+  font-size: 0.8em;
+}
 main p {
   font-size: 20px;
   text-align: center;
@@ -128,41 +131,62 @@ footer p {
   main p {
     text-align: left;
   }
-  #sida2 {
-    height: 75vh;
-  }
   #sida2 .wrapper {
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-areas: "header header" "nav main" "footer footer";
+    height: 70vh;
   }
-  #sida2 .wrapper header {
+  #sida2 header {
     grid-area: header;
   }
-  #sida2 .wrapper nav {
+  #sida2 nav, #sida3 nav {
     grid-area: nav;
   }
-  #sida2 .wrapper main {
+  #sida2 nav ul, #sida3 nav ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+  }
+  #sida2 nav ul li, #sida3 nav ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  #sida2 nav ul li a, #sida3 nav ul li a {
+    padding: 50px;
+  }
+  #sida2 main {
     grid-area: main;
-    height: 60vh;
+    display: block;
+    height: 100%;
     overflow: auto;
+    padding: 10px;
   }
-  #sida2 .wrapper main section {
-    width: 60vw;
+  #sida2 main section {
+    display: grid;
+    gap: 10px;
+    width: 98%;
+    margin: auto;
   }
-  #sida2 .wrapper main section article {
+  #sida2 main section article {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 30vh;
     width: 100%;
+    padding: 0;
   }
-  #sida2 .wrapper main section article figure {
-    height: 20vh;
+  #sida2 main section article figure {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
-  #sida2 .wrapper main section article figure img {
-    width: 20vw;
+  #sida2 main section article figure img {
+    width: 60%;
   }
-  #sida2 .wrapper footer {
+  #sida2 main section article figure figcaption {
+    font-size: 1.2em;
+  }
+  #sida2 footer {
     grid-area: footer;
   }
 }/*# sourceMappingURL=style.css.map */
