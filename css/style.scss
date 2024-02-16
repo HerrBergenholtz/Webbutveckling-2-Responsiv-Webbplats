@@ -1,5 +1,20 @@
 $headerColor: #cecece;
 $navColor: #ecf1f5;
+//Variabler som används för färger
+
+@mixin border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+}
+//Mixin som gör att jag lätt kan lägga till min vanliga style för borders med "@include border;"
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+//Mixin som gör att jag kan lägga till min styling för att centrera element med flexbox genom att lägga till "@include flexCenter;"
 
 body {
     margin: 0;
@@ -12,15 +27,11 @@ body {
 
 header {
     background-color: $headerColor;
-    width: 100vw;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
+    height: 80px;
+    @include flexCenter;
+    @include border;
 
     h1 {
-        margin: 0;
         font-size: 28px;
         text-align: center;
     }
@@ -46,8 +57,9 @@ nav {
                 text-decoration: none;
                 color: inherit;
                 display: block;
-                height: 20px;
+                height: 25px;
                 padding: 15px;
+                font-size: 22px;
             }
         }
     }
@@ -63,7 +75,6 @@ main {
 
         img {
             margin: auto;
-            width: 100%;
         }
 
         caption {
@@ -72,18 +83,15 @@ main {
     }
 
     p {
-        font-size: 20px;
-        text-align: center;
+        font-size: 1.3em;
     }
 }
 
 footer {
-    height: 60px;
+    height: 70px;
     background-color: $headerColor;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
+    @include flexCenter;
+
 
     p {
         font-size: 20px;
@@ -96,9 +104,7 @@ footer {
 
         article {
             padding: 20px;
-            border-style: solid;
-            border-color: #000;
-            border-width: 1px;
+            @include border;
 
             figure {
                 display: grid;
@@ -112,10 +118,17 @@ footer {
                     margin: auto;
                 }
             }
+        }
+    }
+}
 
-            p {
-                text-align: left;
-            }
+#sida3 {
+    aside {
+        padding: 20px;
+        @include border;
+
+        p {
+        font-size: 20px;
         }
     }
 }
@@ -124,9 +137,7 @@ footer {
     body {
         margin: auto;
         width: 80vw;
-        border-color: #000;
-        border-style: solid;
-        border-width: 1px;
+        @include border;
     }
 
     header {
@@ -141,9 +152,7 @@ footer {
             grid-template-rows: auto;
 
             li {
-                border-width: 1px;
-                border-color: #000;
-                border-style: solid;
+                @include border;
             }
         }
     }
@@ -159,12 +168,12 @@ footer {
 
     #sida2 {
         .wrapper {
-            grid-template-columns: 1fr 5fr;
+            grid-template-columns: 1.5fr 6fr;
             grid-template-areas: 
                 "header header"
                 "nav main"
                 "footer footer";
-            height: 70vh;
+            height: 75vh;
         }
 
         header {
@@ -181,9 +190,7 @@ footer {
             height: 100%;
 
             li {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flexCenter;
                 height: auto;
             
                 a {
@@ -193,12 +200,12 @@ footer {
         }
     }
 
-    #sida2 main {
+    #sida2 main, #sida3 main {
         grid-area: main;
         display: block;
-        height: 100%;
         overflow: auto;
         padding: 10px;
+        @include border;
 
         section {
             display: grid;
@@ -210,7 +217,6 @@ footer {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 height: 30vh;
-                width: 100%;
                 padding: 0;
 
                 figure {
@@ -231,5 +237,38 @@ footer {
 
     #sida2 footer {
         grid-area: footer;
+    }
+
+    #sida3 {
+        .wrapper {
+            grid-template-columns: 1.5fr 4fr 2fr;
+            grid-template-areas: 
+            "header header header"
+            "nav main aside"
+            "footer footer footer";
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        main {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        aside {
+            grid-area: aside;
+            border-top-style: none;
+            border-left-style: solid;
+        }
+
+        footer {
+            grid-area: footer;
+        }
     }
 }

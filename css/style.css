@@ -9,15 +9,15 @@ body {
 
 header {
   background-color: #cecece;
-  width: 100vw;
-  height: 70px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
 }
 header h1 {
-  margin: 0;
   font-size: 28px;
   text-align: center;
 }
@@ -42,8 +42,9 @@ nav ul li a {
   text-decoration: none;
   color: inherit;
   display: block;
-  height: 20px;
+  height: 25px;
   padding: 15px;
+  font-size: 22px;
 }
 
 main {
@@ -56,23 +57,20 @@ main figure {
 }
 main figure img {
   margin: auto;
-  width: 100%;
 }
 main figure caption {
   font-size: 0.8em;
 }
 main p {
-  font-size: 20px;
-  text-align: center;
+  font-size: 1.3em;
 }
 
 footer {
-  height: 60px;
+  height: 70px;
   background-color: #cecece;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
 }
 footer p {
   font-size: 20px;
@@ -84,8 +82,8 @@ footer p {
 #sida2 main article {
   padding: 20px;
   border-style: solid;
-  border-color: #000;
   border-width: 1px;
+  border-color: #000;
 }
 #sida2 main article figure {
   display: grid;
@@ -97,17 +95,24 @@ footer p {
 #sida2 main article figure figcaption {
   margin: auto;
 }
-#sida2 main article p {
-  text-align: left;
+
+#sida3 aside {
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
+}
+#sida3 aside p {
+  font-size: 20px;
 }
 
 @media screen and (min-width: 800px) {
   body {
     margin: auto;
     width: 80vw;
-    border-color: #000;
     border-style: solid;
     border-width: 1px;
+    border-color: #000;
   }
   header {
     width: 100%;
@@ -120,9 +125,9 @@ footer p {
     grid-template-rows: auto;
   }
   nav ul li {
+    border-style: solid;
     border-width: 1px;
     border-color: #000;
-    border-style: solid;
   }
   main {
     grid-template-columns: 1fr 2fr;
@@ -132,9 +137,9 @@ footer p {
     text-align: left;
   }
   #sida2 .wrapper {
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1.5fr 6fr;
     grid-template-areas: "header header" "nav main" "footer footer";
-    height: 70vh;
+    height: 75vh;
   }
   #sida2 header {
     grid-area: header;
@@ -156,37 +161,60 @@ footer p {
   #sida2 nav ul li a, #sida3 nav ul li a {
     padding: 50px;
   }
-  #sida2 main {
+  #sida2 main, #sida3 main {
     grid-area: main;
     display: block;
-    height: 100%;
     overflow: auto;
     padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
   }
-  #sida2 main section {
+  #sida2 main section, #sida3 main section {
     display: grid;
     gap: 10px;
     width: 98%;
     margin: auto;
   }
-  #sida2 main section article {
+  #sida2 main section article, #sida3 main section article {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 30vh;
-    width: 100%;
     padding: 0;
   }
-  #sida2 main section article figure {
+  #sida2 main section article figure, #sida3 main section article figure {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  #sida2 main section article figure img {
+  #sida2 main section article figure img, #sida3 main section article figure img {
     width: 60%;
   }
-  #sida2 main section article figure figcaption {
+  #sida2 main section article figure figcaption, #sida3 main section article figure figcaption {
     font-size: 1.2em;
   }
   #sida2 footer {
+    grid-area: footer;
+  }
+  #sida3 .wrapper {
+    grid-template-columns: 1.5fr 4fr 2fr;
+    grid-template-areas: "header header header" "nav main aside" "footer footer footer";
+  }
+  #sida3 header {
+    grid-area: header;
+  }
+  #sida3 nav {
+    grid-area: nav;
+  }
+  #sida3 main {
+    grid-area: main;
+    padding: 20px;
+  }
+  #sida3 aside {
+    grid-area: aside;
+    border-top-style: none;
+    border-left-style: solid;
+  }
+  #sida3 footer {
     grid-area: footer;
   }
 }/*# sourceMappingURL=style.css.map */
